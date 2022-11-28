@@ -34,6 +34,7 @@ class BirdsController < ApplicationController
   end
 
   #controller action handling the frontend.
+  #advisable to create in another controller//Birds_likes
   def increment_likes
     bird = Bird.find_by(id: params[:id])
     if bird
@@ -42,7 +43,8 @@ class BirdsController < ApplicationController
     else
       render json: { error: "Bird not found" }, status: :not_found
     end
-end
+  end
+
 
   private
 
